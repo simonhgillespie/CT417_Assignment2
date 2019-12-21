@@ -22,7 +22,7 @@ public class StudentTest {
 	
 	@Test
 	public void testAge() {
-		 assertTrue( this.testStudent.getAge() == 19);
+		 assertTrue( this.testStudent.getAge() == 190);
 	}
 	
 	@Test
