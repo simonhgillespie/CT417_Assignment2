@@ -1,20 +1,22 @@
 package nuigalway.app;
-
 import java.util.Date;
+import java.util.LinkedList;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.Years;
 
 public class Student {
 	
 	private String name;
-	private int age;
-	private Date dateOfBirth;
+	private DateTime dateOfBirth;
 	private int id;
-	private Module[] modules = new Module[20];
 	
-	
-
+	private LinkedList<Module> modules = new LinkedList<Module>(); 
+	private LinkedList<Course> courses = new LinkedList<Course>(); 
 	
 	public String getUsername() {
-		return this.name + this.age; 
+		return this.name.toLowerCase().replaceAll("\\s","") + this.getAge(); 
 	}
 	public String getName() {
 		return name;
@@ -25,18 +27,16 @@ public class Student {
 	}
 
 	public int getAge() {
+		
+		int age = Years.yearsBetween(dateOfBirth, new DateTime(DateTimeZone.UTC)).getYears();
 		return age;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public Date getDateOfBirth() {
+	public DateTime getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(DateTime dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
@@ -48,11 +48,21 @@ public class Student {
 		this.id = id;
 	}
 
-	public Module [] getModules() {
+	public LinkedList<Module> getModules() {
 		return modules;
 	}
-/*
-	public void addModules(Module [] modules) {
-		this.modules
-	}*/
+
+	public void addModule(Module module) {
+		this.modules.add(module);
+	}
+	
+	public LinkedList<Course> getCourses() {
+		return courses;
+	}
+	
+	public void addCourse( Course course) {
+		this.courses.add(course);
+	}
+	
+	
 }
