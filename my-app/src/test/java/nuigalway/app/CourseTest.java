@@ -14,7 +14,7 @@ public class CourseTest {
 	public void createCourse() {
 		this.testCourse = new Course("CS");
 		this.testCourse.addModule(new Module("CT417"));
-		this.testCourse.addStudent(new Student("Jow Bloggs"));
+		this.testCourse.addStudent(new Student("Joe Bloggs"));
 		this.testCourse.setStartingDate(new DateTime(2020, 9, 01, 9, 0 ));
 		this.testCourse.setEndDate(new DateTime(2021, 5, 13, 18, 0 ));
 	}
