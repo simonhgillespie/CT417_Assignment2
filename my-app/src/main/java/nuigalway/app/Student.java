@@ -13,7 +13,11 @@ public class Student {
 	private int id;
 	
 	private LinkedList<Module> modules = new LinkedList<Module>(); 
-	private LinkedList<Course> courses = new LinkedList<Course>(); 
+	private LinkedList<Course> courses = new LinkedList<Course>();
+
+	public Student(String name) {
+		this.name = name;
+	}
 	
 	public String getUsername() {
 		return this.name.toLowerCase().replaceAll("\\s","") + this.getAge(); 

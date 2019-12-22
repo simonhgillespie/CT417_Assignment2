@@ -12,8 +12,7 @@ public class StudentTest {
 	
 	@Before
 	public void createStudent() {
-		this.testStudent = new Student();
-		this.testStudent.setName("Joe Bloggs");
+		this.testStudent = new Student("Joe Bloggs");
 		this.testStudent.addCourse(new Course("Computer Science"));
 		this.testStudent.addModule(new Module("CT417"));
 		this.testStudent.setDateOfBirth(new DateTime(2000,01,01, 00, 00));
@@ -22,7 +21,7 @@ public class StudentTest {
 	
 	@Test
 	public void testAge() {
-		 assertTrue( this.testStudent.getAge() == 190);
+		 assertTrue( this.testStudent.getAge() == 19);
 	}
 	
 	@Test
